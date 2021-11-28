@@ -83,7 +83,7 @@ public class BatchConfiguration {
 	@Bean
 	@StepScope
 	public FlatFileItemReader flatFileItemReader(
-			@Value("#{ ['fileInput']}")
+			@Value("#{jobParameters['fileInput']}")
 			FileSystemResource inputFile) {
 		FlatFileItemReader reader = new FlatFileItemReader();
 		// step 1 permite leer y saber donde esta el archivo
